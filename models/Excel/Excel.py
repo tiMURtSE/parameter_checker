@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 class Excel:
-    TEST_FILE_PATH = "C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker (openpyxl)/tests/Тестовый шаблон.xlsx"
+    TEST_FILE_PATH = "C:/Users/user10/Desktop/Stuff/Scripts/variations_3.0/Выгрузка/ss.xlsx"
 
     def __init__(self):
         self._setup()
