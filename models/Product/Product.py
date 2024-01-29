@@ -24,11 +24,10 @@ class Product:
     def required_params(self, value):
         if value:
             self._required_params = value
-            self._set_param_values()
         else:
             print(f"Для категории {self._category} не было найдено обязательных параметров")
 
-    def _set_param_values(self):
+    def set_param_values(self):
         for param in self._required_params:
             index = param.col_index
             value = self._row[index].value
