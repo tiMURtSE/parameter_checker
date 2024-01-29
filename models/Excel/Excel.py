@@ -1,5 +1,6 @@
 import sys
 import openpyxl
+from openpyxl.worksheet.worksheet import Worksheet
 import tkinter as tk
 from tkinter import filedialog
 
@@ -15,7 +16,7 @@ class Excel:
         self._workbook = openpyxl.load_workbook(self._file_path)
         self._sheet = self._workbook.active
 
-    def get_data(self):
+    def get_data(self) -> Worksheet:
         return self._sheet
 
     def _input_file_path(self):
