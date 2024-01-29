@@ -9,6 +9,8 @@ class Product:
 
         self._id = self._row[self.ID_COLUMN_INDEX].value
         self._category = self._row[self.CATEGORY_COLUMN_INDEX].value
+        self._cell = None
+        self._value = None
 
         self._required_params = []
 
@@ -30,6 +32,8 @@ class Product:
     def set_param_values(self):
         for param in self._required_params:
             index = param.col_index
-            value = self._row[index].value
+            cell = self._row[index]
+            value = cell.value
 
+            param.cell = cell
             param.value = value

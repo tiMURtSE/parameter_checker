@@ -11,6 +11,10 @@ class ConditionalParamChecker:
 
         for condition in conditions:
             if condition == "размер":
-                required_params = self._condition.check_size_conditions(required_params=required_params)
+                required_params = self._condition.check_size_condition(required_params=required_params)
+            elif condition == "цоколь":
+                required_params = self._condition.check_base_condition(required_params=required_params)
+            elif condition == "внешний вид":
+                required_params = self._condition.check_appearance_condition(required_params=required_params)
 
         return required_params

@@ -6,6 +6,7 @@ from openpyxl.cell.cell import Cell
 class RequiredParamType:
     name: str
     col_index: int
+    cell: Cell
     value: str
     is_required: bool
     is_conditional: bool
@@ -14,5 +15,5 @@ class RequiredParamType:
 class ProductType:
     id: int
     category: str
-    row: tuple[Cell]
     required_params: List[RequiredParamType]
+    row: tuple[Cell]
