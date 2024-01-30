@@ -38,7 +38,6 @@ class Condition:
             glow_color.is_required = False
             luminous_flux.is_required = False
 
-        base.is_conditional = True
         total_LED_power.is_conditional = True
         color_temperature.is_conditional = True
         glow_color.is_conditional = True
