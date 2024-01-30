@@ -21,15 +21,12 @@ class Main:
 
         for row in self._sheet.iter_rows(min_row=self.PRODUCTS_TABLE_START_POS):
             product = Product(row=row)
-            required_params = self._param.get_category_params(product.category)
-            product.required_params = required_params
+            product = self._param.get_category_params(product=product)
             product.set_param_values()
-
-            product.required_params = self._conditional_param_checker.check_conditions(category=product.category, required_params=product.required_params)
-
+            product = self._conditional_param_checker.check_conditions(product=product)
             self._fill.fill_cell(product=product)
 
-            self._excel.save_workbook()
+        self._excel.save_workbook()
 
 if __name__ == "__main__":
     app = Main()

@@ -1,6 +1,7 @@
 from models.RequiredParam.RequiredParam import RequiredParam
 from consts.category_params import CATEGORY_PARAMS
-from local_types import RequiredParamType
+from models.Product.Product import Product
+from local_types import ProductType
 
 class Param:
 
@@ -19,11 +20,11 @@ class Param:
         except:
             raise ValueError("Sheet не должно быть пустым значением")
 
-    def get_category_params(self, category: str) -> RequiredParamType:
-        required_param_names = self._get_required_param_names(category=category)
-        required_params = self._create_required_params(required_param_names=required_param_names)
+    def get_category_params(self, product: Product):
+        required_param_names = self._get_required_param_names(category=product.category)
+        product.required_params = self._create_required_params(required_param_names=required_param_names)
 
-        return required_params
+        return product
     
     def _create_required_params(self, required_param_names: list[str]):
         required_params = []
