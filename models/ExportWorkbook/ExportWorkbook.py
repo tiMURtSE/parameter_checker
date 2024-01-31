@@ -4,9 +4,7 @@ from openpyxl.worksheet.worksheet import Worksheet
 import tkinter as tk
 from tkinter import filedialog
 
-from local_types import ResultType
-
-class Excel:
+class ExportWorkbook:
     TEST_FILE_PATH = "C:/Users/user10/Desktop/Stuff/Scripts/variations_3.0/Выгрузка/ss.xlsx"
 
     def __init__(self):
@@ -20,13 +18,6 @@ class Excel:
 
     def get_data(self) -> Worksheet:
         return self._sheet
-    
-    def write_result(self, result: ResultType):
-
-
-
-
-        # Запись незаполненных товаров
     
     def save_workbook(self):
         self._workbook.save(self._file_path)
@@ -46,4 +37,3 @@ class Excel:
     def _remove_extra_window(self):
         root = tk.Tk()
         root.withdraw()
-    

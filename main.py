@@ -1,24 +1,26 @@
-from models.Excel.Excel import Excel
+from models.ExportWorkbook.ExportWorkbook import ExportWorkbook
 from models.Product.Product import Product
 from models.Param.Param import Param
 from models.ConditionalParamChecker.ConditionalParamChecker import ConditionalParamChecker
 from models.Fill.Fill import Fill
 from models.Statistics.Statistics import Statistics
+from models.ResultWorkbook.ResultWorkbook import ResultWorkbook
 
 class Main:
     PRODUCTS_TABLE_START_POS = 3
 
     def __init__(self):
-        self._excel = Excel()
+        self._export_workbook = ExportWorkbook()
         self._param = Param()
         self._conditional_param_checker = ConditionalParamChecker()
         self._fill = Fill()
         self._statistics = Statistics()
+        self._result_workbook = ResultWorkbook()
 
         self._sheet = None
 
     def run(self):
-        self._sheet = self._excel.get_data()
+        self._sheet = self._export_workbook.get_data()
         self._param.sheet = self._sheet
 
         for row in self._sheet.iter_rows(min_row=self.PRODUCTS_TABLE_START_POS):
@@ -40,8 +42,8 @@ class Main:
             # Добавление данных товара в объект со статистикой
             self._statistics.update_statistics(product=product)
 
-        print(self._statistics.get_result())
-        # self._excel.save_workbook()
+        self._result_workbook.write_result(self._statistics.get_result())
+        self._export_workbook.save_workbook()
 
 if __name__ == "__main__":
     app = Main()
