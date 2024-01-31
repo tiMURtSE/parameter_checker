@@ -1,6 +1,6 @@
 from openpyxl.styles import PatternFill
 from openpyxl.cell.cell import Cell
-from local_types import ProductType
+from models.Product.Product import Product
 from typing import List
 
 class Fill:
@@ -10,18 +10,15 @@ class Fill:
     def __init__(self):
         pass
 
-    def fill_cell(self, product: ProductType):
+    def fill_cells(self, product: Product):
         required_params = product.required_params
 
         for param in required_params:
-            if param.is_required and not param.value:
+            if param.is_required_parameter_unfilled():
                 if param.is_conditional:
                     self._fill_cell_orange(param.cell)
-                    print(f"Красным: {param.name}")
                 else:
                     self._fill_cell_red(param.cell)
-                    print(f"Оранджевым: {param.name}")
-
 
     def _fill_cell_red(self, cell: Cell):
         red_fill = PatternFill(start_color=self.RED_COLOR, end_color=self.RED_COLOR, fill_type="solid")

@@ -1,5 +1,8 @@
 from openpyxl.cell.cell import Cell
 
+from typing import List
+from models.RequiredParam.RequiredParam import RequiredParam
+
 class Product:
     ID_COLUMN_INDEX = 0
     CATEGORY_COLUMN_INDEX = 5
@@ -12,7 +15,7 @@ class Product:
         self._cell = None
         self._value = None
 
-        self._required_params = []
+        self._required_params: List[RequiredParam] = []
 
     @property
     def category(self):
@@ -33,7 +36,13 @@ class Product:
         for param in self._required_params:
             index = param.col_index
             cell = self._row[index]
-            value = cell.value
+            value = self._remove_whitespaces(cell.value)
 
             param.cell = cell
             param.value = value
+
+    def _remove_whitespaces(self, value):
+        if isinstance(value, str):
+            return value.strip()
+        
+        return value
