@@ -4,6 +4,8 @@ from openpyxl.worksheet.worksheet import Worksheet
 import tkinter as tk
 from tkinter import filedialog
 
+from local_types import ResultType
+
 class Excel:
     TEST_FILE_PATH = "C:/Users/user10/Desktop/Stuff/Scripts/variations_3.0/Выгрузка/ss.xlsx"
 
@@ -18,6 +20,16 @@ class Excel:
 
     def get_data(self) -> Worksheet:
         return self._sheet
+    
+    def write_result(self, result: ResultType):
+
+
+
+
+        # Запись незаполненных товаров
+    
+    def save_workbook(self):
+        self._workbook.save(self._file_path)
 
     def _input_file_path(self):
         print("Выберите файл для проверки: ")
@@ -35,5 +47,3 @@ class Excel:
         root = tk.Tk()
         root.withdraw()
     
-    def save_workbook(self):
-        self._workbook.save(self._file_path)

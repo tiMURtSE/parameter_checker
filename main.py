@@ -40,7 +40,7 @@ class Main:
             # Добавление данных товара в объект со статистикой
             self._statistics.update_statistics(product=product)
 
-        print(self._statistics.get_summary())
+        print(self._statistics.get_result())
         # self._excel.save_workbook()
 
 if __name__ == "__main__":

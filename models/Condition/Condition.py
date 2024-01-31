@@ -9,9 +9,9 @@ class Condition:
         pass
 
     def check_size_condition(self, required_params):
-        diametr = self._find_param(param_name=PARAMS["Диаметр"], required_params=required_params)
-        shirina = self._find_param(param_name=PARAMS["Длина"], required_params=required_params)
-        dlina = self._find_param(param_name=PARAMS["Ширина"], required_params=required_params)
+        diametr = self._find_param(param_id=PARAMS["Диаметр"], required_params=required_params)
+        shirina = self._find_param(param_id=PARAMS["Длина"], required_params=required_params)
+        dlina = self._find_param(param_id=PARAMS["Ширина"], required_params=required_params)
 
         if diametr.value:
             shirina.is_required = False
@@ -26,11 +26,11 @@ class Condition:
         return required_params
     
     def check_base_condition(self, required_params):
-        base = self._find_param(param_name=PARAMS["Цоколь"], required_params=required_params)
-        total_LED_power = self._find_param(param_name=PARAMS["Суммарная мощность LED"], required_params=required_params)
-        color_temperature = self._find_param(param_name=PARAMS["Цветовая температура"], required_params=required_params)
-        glow_color = self._find_param(param_name=PARAMS["Цвет свечения"], required_params=required_params)
-        luminous_flux = self._find_param(param_name=PARAMS["Световой поток, Lm"], required_params=required_params)
+        base = self._find_param(param_id=PARAMS["Цоколь"], required_params=required_params)
+        total_LED_power = self._find_param(param_id=PARAMS["Суммарная мощность LED"], required_params=required_params)
+        color_temperature = self._find_param(param_id=PARAMS["Цветовая температура"], required_params=required_params)
+        glow_color = self._find_param(param_id=PARAMS["Цвет свечения"], required_params=required_params)
+        luminous_flux = self._find_param(param_id=PARAMS["Световой поток, Lm"], required_params=required_params)
 
         if base.value != "LED":
             total_LED_power.is_required = False
@@ -46,9 +46,9 @@ class Condition:
         return required_params
     
     def check_appearance_condition(self, required_params):
-        decoration = self._find_param(param_name=PARAMS["Оформление"], required_params=required_params)
-        shape = self._find_param(param_name=PARAMS["Форма"], required_params=required_params)
-        shape_of_lampshade = self._find_param(param_name=PARAMS["Форма плафона"], required_params=required_params)
+        decoration = self._find_param(param_id=PARAMS["Оформление"], required_params=required_params)
+        shape = self._find_param(param_id=PARAMS["Форма"], required_params=required_params)
+        shape_of_lampshade = self._find_param(param_id=PARAMS["Форма плафона"], required_params=required_params)
 
         if decoration.value:
             shape.is_required = False
@@ -66,7 +66,7 @@ class Condition:
 
         return required_params
     
-    def _find_param(self, param_name: str, required_params: list):
-        target_param = [param for param in required_params if param.name == param_name]
+    def _find_param(self, param_id: str, required_params: list):
+        target_param = [param for param in required_params if param.id == param_id]
 
         return target_param[0]

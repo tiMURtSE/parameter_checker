@@ -21,36 +21,36 @@ class Param:
             raise ValueError("Sheet не должно быть пустым значением")
 
     def get_category_params(self, product: Product):
-        required_param_names = self._get_required_param_names(category=product.category)
-        product.required_params = self._create_required_params(required_param_names=required_param_names)
+        required_param_ids = self._get_required_param_ids(category=product.category)
+        product.required_params = self._create_required_params(required_param_ids=required_param_ids)
 
         return product
     
-    def _create_required_params(self, required_param_names: list[str]):
+    def _create_required_params(self, required_param_ids: list[str]):
         required_params = []
 
-        for param_name in required_param_names:
-            col_index = self._find_param_col_index(param_name)
+        for param_id in required_param_ids:
+            col_index = self._find_param_col_index(param_id)
 
-            param_obj = RequiredParam(param_name, col_index)
+            param_obj = RequiredParam(param_id, col_index)
 
             required_params.append(param_obj)
 
         return required_params
 
-    def _get_required_param_names(self, category: str):
-        names = []
+    def _get_required_param_ids(self, category: str):
+        ids = []
 
         try:
             formatted_category = category.lower().strip()
-            names = CATEGORY_PARAMS[formatted_category]
+            ids = CATEGORY_PARAMS[formatted_category]
         except:
             self._missing_categories.append(category)
 
-        return names
+        return ids
 
-    def _find_param_col_index(self, param_name: str):
+    def _find_param_col_index(self, param_id: str):
         for headings in self._sheet.iter_rows(min_row=1, max_row=1):
             for index, cell in enumerate(headings):
-                if cell.value == param_name:
+                if cell.value == param_id:
                     return index
