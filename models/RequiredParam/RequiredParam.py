@@ -9,6 +9,7 @@ class RequiredParam:
         
         self.is_required = True
         self.is_conditional = False
+        print(self.__dict__)
 
     def is_required_parameter_filled(self):
         return self.is_required and self.value
