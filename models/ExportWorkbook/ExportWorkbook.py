@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 class ExportWorkbook:
-    TEST_FILE_PATH = "C:/Users/user10/Desktop/Stuff/Scripts/variations_3.0/Выгрузка/ss.xlsx"
+    TEST_FILE_PATH = "C:/Users/user10/Desktop/Stuff/Scripts/variations_3.0/Выгрузка/svetholl.xlsx"
 
     def __init__(self):
         self._setup()
