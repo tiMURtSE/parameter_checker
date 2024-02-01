@@ -1,9 +1,6 @@
 from consts.params import PARAMS
 
 class Condition:
-    DIAM = "pi:20"
-    DL = "pi:17"
-    SHIR = "pi:19"
 
     def __init__(self):
         pass
@@ -45,22 +42,15 @@ class Condition:
 
         return required_params
     
-    def check_appearance_condition(self, required_params):
-        decoration = self._find_param(param_id=PARAMS["Оформление"], required_params=required_params)
+    def check_shape_condition(self, required_params):
         shape = self._find_param(param_id=PARAMS["Форма"], required_params=required_params)
         shape_of_lampshade = self._find_param(param_id=PARAMS["Форма плафона"], required_params=required_params)
 
-        if decoration.value:
-            shape.is_required = False
-            shape_of_lampshade.is_required = False
-        elif shape.value:
-            decoration.is_required = False
+        if shape.value:
             shape_of_lampshade.is_required = False
         elif shape_of_lampshade.value:
-            decoration.is_required = False
             shape.is_required = False
 
-        decoration.is_conditional = True
         shape.is_conditional = True
         shape_of_lampshade.is_conditional = True
 

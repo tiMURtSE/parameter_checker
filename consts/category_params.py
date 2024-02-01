@@ -5,6 +5,7 @@ CATEGORY_PARAMS = {
         PARAMS["Цвет"],
         PARAMS["Цвет арматуры"],
         PARAMS["Цвет плафона"],
+        PARAMS["Оформление"],
         PARAMS["Цоколь"],
         PARAMS["Высота"],
         PARAMS["Стиль"],
@@ -24,7 +25,6 @@ CATEGORY_PARAMS = {
         PARAMS["Цвет свечения"],
         PARAMS["Световой поток, Lm"],
 
-        PARAMS["Оформление"],
         PARAMS["Форма"],
         PARAMS["Форма плафона"],
     ],
@@ -32,6 +32,7 @@ CATEGORY_PARAMS = {
         PARAMS["Цвет"],
         PARAMS["Цвет арматуры"],
         PARAMS["Цвет плафона"],
+        PARAMS["Оформление"],
         PARAMS["Высота"],
         PARAMS["Стиль"],
         PARAMS["Общее кол-во ламп"],
@@ -42,7 +43,6 @@ CATEGORY_PARAMS = {
         PARAMS["Тип монтажа"],
         PARAMS["Способ крепления"],
 
-        PARAMS["Оформление"],
         PARAMS["Форма"],
         PARAMS["Форма плафона"],
 
@@ -60,6 +60,7 @@ CATEGORY_PARAMS = {
         PARAMS["Цвет"],
         PARAMS["Цвет арматуры"],
         PARAMS["Цвет плафона"],
+        PARAMS["Оформление"],
         PARAMS["Высота"],
         PARAMS["Стиль"],
         PARAMS["Общее кол-во ламп"],
@@ -69,12 +70,10 @@ CATEGORY_PARAMS = {
         PARAMS["Материал плафона"],
         PARAMS["Тип монтажа"],
         PARAMS["Степень пыле-влагозащиты"],
-        PARAMS["Форма"],
 
-        PARAMS["Оформление"],
         PARAMS["Форма"],
         PARAMS["Форма плафона"],
-        
+
         PARAMS["Диаметр"],
         PARAMS["Длина"],
         PARAMS["Ширина"],
