@@ -5,14 +5,14 @@ import tkinter as tk
 from tkinter import filedialog
 
 class ExportWorkbook:
-    TEST_FILE_PATH = "C:/Users/user10/Desktop/Stuff/Scripts/variations_3.0/Выгрузка/svetholl.xlsx"
+    TEST_FILE_PATH = "C:/Users/user10/Desktop/Stuff/Scripts/variations_3.0/Выгрузка/профили.xlsx"
 
     def __init__(self):
         self._setup()
 
     def _setup(self):
-        # self._file_path = self._input_file_path()
-        self._file_path = self.TEST_FILE_PATH
+        self._file_path = self._input_file_path()
+        # self._file_path = self.TEST_FILE_PATH
         self._workbook = openpyxl.load_workbook(self._file_path)
         self._sheet = self._workbook.active
 

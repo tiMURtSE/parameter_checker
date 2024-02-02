@@ -23,7 +23,7 @@ class Main:
         self._sheet = self._export_workbook.get_data()
         self._param.sheet = self._sheet
 
-        for row in self._sheet.iter_rows(min_row=self.PRODUCTS_TABLE_START_POS):
+        for index, row in enumerate(self._sheet.iter_rows(min_row=self.PRODUCTS_TABLE_START_POS)):
             # Создает объект "Товар"
             product = Product(row=row)
 
@@ -35,12 +35,15 @@ class Main:
 
             # Определяет какие параметры являются необязательными для заполнения и какие параметрмы являются условными
             product = self._conditional_param_checker.check_conditions(product=product)
-
+            
             # Заливка ячеек
             self._fill.fill_cells(product=product)
 
             # Добавление данных товара в объект со статистикой
             self._statistics.update_statistics(product=product)
+
+            # Лог
+            print(f"Номер строки: {index + 1}")
 
         self._result_workbook.write_result(self._statistics.get_result())
         self._export_workbook.save_workbook()
