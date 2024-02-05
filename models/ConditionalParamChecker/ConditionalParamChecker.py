@@ -8,19 +8,11 @@ class ConditionalParamChecker:
 
     def check_conditions(self, product: Product):
         category = product.category
-        required_params = product.required_params
 
         formatted_category = category.lower().strip()
         conditions = CATEGORY_CONDITIONAL_PARAMS[formatted_category]
 
         for condition in conditions:
-            if condition == "размер":
-                required_params = self._condition.check_size_condition(required_params=required_params)
-            elif condition == "цоколь":
-                required_params = self._condition.check_base_condition(required_params=required_params)
-            elif condition == "форма":
-                required_params = self._condition.check_shape_condition(required_params=required_params)
-
-        product.required_params = required_params
+            condition.check_condition(product=product)
 
         return product

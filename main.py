@@ -44,9 +44,11 @@ class Main:
 
             # Лог
             print(f"Номер строки: {index + 1}")
+            print([param.__dict__ for param in product.required_params])
 
-        self._result_workbook.write_result(self._statistics.get_result())
-        self._export_workbook.save_workbook()
+        print(self._statistics.get_result())
+        # self._result_workbook.write_result(self._statistics.get_result())
+        # self._export_workbook.save_workbook()
 
 if __name__ == "__main__":
     app = Main()
