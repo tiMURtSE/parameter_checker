@@ -42,8 +42,7 @@ class Param:
         ids = []
 
         try:
-            formatted_category = category.lower().strip()
-            ids = CATEGORY_PARAMS[formatted_category]
+            ids = CATEGORY_PARAMS[category]
         except:
             self._missing_categories.append(category)
 

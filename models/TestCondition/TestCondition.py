@@ -1,54 +1,39 @@
 from consts.params import PARAMS
+from models.Product.Product import Product
+from models.RequiredParam.RequiredParam import RequiredParam
 
-# class Context:
-#     def __init__(self, strategy):
-#         self._strategy = strategy
-
-#     def set_strategy(self, strategy):
-#         self._strategy = strategy
-
-#     def perform_check(self, product):
-#         product = self._strategy.check_condition(product)
-
-#         return product
-
-class Strategy:
+class Condition:
     def __init__(self):
         pass
 
-    def check_condition(self, product):
-        pass
-
-    def _find_param(self, param_id: str, required_params: list):
-        target_param = [param for param in required_params if param.id == param_id]
-
-        return target_param[0]
-    
-    def _find_params(self, conditional_param_names, product):
+    def _find_conditional_params(self, conditional_param_names: list[str], product: Product):
         params = []
 
         for name in conditional_param_names:
             param_id = PARAMS[name]
-            param = self._find_param(param_id=param_id, required_params=product.required_params)
+            param = product.get_required_param(param_id=param_id)
+
+            if param is None:
+                raise KeyError("У товара нет нужного условного параметра (хотя должно быть)")
 
             params.append(param)
 
         return params
 
-    def set_conditional_is_true(self, params):
+    def set_conditional_is_true(self, params: list[RequiredParam]):
         for param in params:
             param.is_conditional = True
 
         return param
     
-# СТРАТЕГИЯ №1
-class SizeStrategy(Strategy):
-    def __init__(self):
-        pass
+class SizeCondition(Condition):
+    DIAMETER_PARAM_NAME = "Диаметр"
+    LENGTH_PARAM_NAME = "Длина"
+    WIDTH_PARAM_NAME = "Ширина"
 
-    def check_condition(self, product):
-        conditional_param_names = ["Диаметр", "Длина", "Ширина"]
-        diameter, length, width = self._find_params(conditional_param_names, product)
+    def check_condition(self, product: Product):
+        conditional_param_names = [self.DIAMETER_PARAM_NAME, self.LENGTH_PARAM_NAME, self.WIDTH_PARAM_NAME]
+        diameter, length, width = self._find_conditional_params(conditional_param_names=conditional_param_names, product=product)
 
         if diameter.value:
             width.is_required = False
@@ -56,16 +41,12 @@ class SizeStrategy(Strategy):
         elif width.value and length.value:
             diameter.is_required = False
 
-        diameter.is_conditional = True
-        width.is_conditional = True
-        length.is_conditional = True
-
         self.set_conditional_is_true([diameter, length, width])
 
         return product
 
 # СТРАТЕГИЯ №2
-class BaseCondition(Strategy):
+class BaseCondition(Condition):
     def __init__(self):
         pass
 

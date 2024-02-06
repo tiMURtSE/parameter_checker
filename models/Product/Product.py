@@ -10,8 +10,7 @@ class Product:
     def __init__(self, row: tuple[Cell]):
         self._row = row
 
-        self._id = self._row[self.ID_COLUMN_INDEX].value
-        self._category = self._row[self.CATEGORY_COLUMN_INDEX].value
+        self._category = self._get_category()
         self._cell = None
         self._value = None
 
@@ -40,6 +39,17 @@ class Product:
 
             param.cell = cell
             param.value = value
+
+    def get_required_param(self, param_id: str):
+        for param in self._required_params:
+            if param.id == param_id:
+                return param
+
+    def _get_category(self):
+        category = self._row[self.CATEGORY_COLUMN_INDEX].value
+        formatted_category = category.lower().strip()
+
+        return formatted_category
 
     def _remove_whitespaces(self, value):
         if isinstance(value, str):

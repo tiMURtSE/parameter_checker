@@ -7,10 +7,10 @@ class ConditionalParamChecker:
         self._condition = Condition()
 
     def check_conditions(self, product: Product):
-        category = product.category
-
-        formatted_category = category.lower().strip()
-        conditions = CATEGORY_CONDITIONAL_PARAMS[formatted_category]
+        try:
+            conditions = CATEGORY_CONDITIONAL_PARAMS[product.category]
+        except:
+            raise KeyError(f"Не было найдено категории {product.category}")
 
         for condition in conditions:
             condition.check_condition(product=product)

@@ -1,4 +1,4 @@
-from models.TestCondition.TestCondition import SizeStrategy, BaseCondition
+from models.TestCondition.TestCondition import SizeCondition, BaseCondition
 
 # CATEGORY_CONDITIONAL_PARAMS = {
 #     "люстры": [
@@ -68,11 +68,11 @@ from models.TestCondition.TestCondition import SizeStrategy, BaseCondition
 
 CATEGORY_CONDITIONAL_PARAMS = {
     "люстры": [
-        SizeStrategy(),
+        SizeCondition(),
         BaseCondition()
     ],
     "точечные светильники": [
-        SizeStrategy(),
+        SizeCondition(),
         BaseCondition(),
     ]
 }
