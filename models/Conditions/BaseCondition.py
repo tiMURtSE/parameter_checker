@@ -1,4 +1,3 @@
-from consts.params import PARAMS
 from models.Product.Product import Product
 from models.Conditions.Condition import Condition
 
@@ -17,6 +16,7 @@ class BaseCondition(Condition):
             self.GLOW_COLOR_PARAM_NAME,
             self.LUMINOUS_FLUX_PARAM_NAME
         ]
+        
         base, *dependent_params = self._find_conditional_params(
             conditional_param_names=conditional_param_names,
             product=product
@@ -26,6 +26,6 @@ class BaseCondition(Condition):
             for param in dependent_params:
                 param.is_required = False
 
-        self._set_conditional_is_true(dependent_params)
+        self._set_conditional_is_true(conditional_params=dependent_params)
 
         return product

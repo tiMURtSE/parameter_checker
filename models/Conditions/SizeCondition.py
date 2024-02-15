@@ -23,6 +23,6 @@ class SizeCondition(Condition):
         elif width.value and length.value:
             diameter.is_required = False
 
-        self._set_conditional_is_true([diameter, length, width])
+        self._set_conditional_is_true(conditional_params=[diameter, length, width])
 
         return product

@@ -17,6 +17,6 @@ class ShapeCondition(Condition):
         elif shape_of_lampshade.value:
             shape.is_required = False
 
-        self._set_conditional_is_true([shape, shape_of_lampshade])
+        self._set_conditional_is_true(conditional_params=[shape, shape_of_lampshade])
 
         return product

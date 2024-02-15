@@ -1,7 +1,6 @@
 from models.RequiredParam.RequiredParam import RequiredParam
-from consts.category_params import CATEGORY_PARAMS
+from consts.category_param_ids import category_param_ids
 from models.Product.Product import Product
-from local_types import ProductType
 
 class Param:
 
@@ -33,7 +32,7 @@ class Param:
             col_index = self._find_param_col_index(param_id)
 
             param_obj = RequiredParam(param_id, col_index)
-
+            
             required_params.append(param_obj)
 
         return required_params
@@ -42,7 +41,7 @@ class Param:
         ids = []
 
         try:
-            ids = CATEGORY_PARAMS[category]
+            ids = category_param_ids[category]
         except:
             self._missing_categories.append(category)
 

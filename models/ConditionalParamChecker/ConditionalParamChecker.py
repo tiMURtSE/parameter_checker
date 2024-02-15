@@ -1,10 +1,10 @@
-from consts.category_conditional_params import CATEGORY_CONDITIONAL_PARAMS
+from consts.common_category_conditions import common_category_conditions
 from models.Product.Product import Product
 
 class ConditionalParamChecker:
     def check_conditions(self, product: Product):
         try:
-            conditions = CATEGORY_CONDITIONAL_PARAMS[product.category]
+            conditions = common_category_conditions[product.category]
         except:
             raise KeyError(f"Не было найдено категории {product.category}")
 

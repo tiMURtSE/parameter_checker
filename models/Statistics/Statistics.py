@@ -1,5 +1,4 @@
 from models.Product.Product import Product
-from consts.params import PARAMS
 
 class Statistics:
     def __init__(self):

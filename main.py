@@ -1,3 +1,5 @@
+import sys
+
 from models.ExportWorkbook.ExportWorkbook import ExportWorkbook
 from models.Product.Product import Product
 from models.Param.Param import Param
@@ -29,9 +31,11 @@ class Main:
 
             # Возвращает параметры для заполнения, основываясь на категории товара
             product = self._param.get_category_params(product=product)
-
+            
             # Получает значения параметров
             product.set_param_values()
+            # print([param.__dict__ for param in product.required_params])
+            # sys.exit()
 
             # Определяет какие параметры являются необязательными для заполнения и какие параметрмы являются условными
             product = self._conditional_param_checker.check_conditions(product=product)
@@ -48,7 +52,7 @@ class Main:
 
         print(self._statistics.get_result())
         # self._result_workbook.write_result(self._statistics.get_result())
-        # self._export_workbook.save_workbook()
+        self._export_workbook.save_workbook()
 
 if __name__ == "__main__":
     app = Main()
