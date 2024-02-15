@@ -1,5 +1,3 @@
-import sys
-
 from models.ExportWorkbook.ExportWorkbook import ExportWorkbook
 from models.Product.Product import Product
 from models.Param.Param import Param

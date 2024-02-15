@@ -17,7 +17,10 @@ class RoundShapeCondition(Condition):
             conditional_param_names=conditional_param_names, product=product
         )
 
-        if width.value != depth.value:
+        if diameter.value:
+            width.is_required = False
+            depth.is_required = False
+        elif width.value and depth.value:
             diameter.is_required = False
 
         self._set_conditional_is_true(conditional_params=[width, depth, diameter])
