@@ -15,7 +15,7 @@
 
 <div class="node">
   <a name="main.py"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/main.py" type="text/plain"><tt>main.py</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/main.py" type="text/plain"><tt>main.py</tt></a>
 <span class="moduletype">Script</span>  <div class="import">
 imports:
     <a href="#_collections_abc">_collections_abc</a>
@@ -155,11 +155,12 @@ imports:
  &#8226;   <a href="#keyword">keyword</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
+ &#8226;   <a href="#models.CategoryParamsHandler.CategoryParamsHandler">models.CategoryParamsHandler.CategoryParamsHandler</a>
  &#8226;   <a href="#models.ConditionalParamChecker.ConditionalParamChecker">models.ConditionalParamChecker.ConditionalParamChecker</a>
  &#8226;   <a href="#models.ExportWorkbook.ExportWorkbook">models.ExportWorkbook.ExportWorkbook</a>
  &#8226;   <a href="#models.Fill.Fill">models.Fill.Fill</a>
- &#8226;   <a href="#models.Param.Param">models.Param.Param</a>
  &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+ &#8226;   <a href="#models.ProgressBar.ProgressBar">models.ProgressBar.ProgressBar</a>
  &#8226;   <a href="#models.ResultWorkbook.ResultWorkbook">models.ResultWorkbook.ResultWorkbook</a>
  &#8226;   <a href="#models.Statistics.Statistics">models.Statistics.Statistics</a>
  &#8226;   <a href="#ntpath">ntpath</a>
@@ -3007,8 +3008,10 @@ imported by:
   <a target="code" href="-" type="text/plain"><tt>consts</tt></a>
 <span class="moduletype">NamespacePackage</span>  <div class="import">
 imported by:
-    <a href="#consts.category_conditional_params">consts.category_conditional_params</a>
- &#8226;   <a href="#consts.category_params">consts.category_params</a>
+    <a href="#consts.category_param_ids">consts.category_param_ids</a>
+ &#8226;   <a href="#consts.common_category_conditions">consts.common_category_conditions</a>
+ &#8226;   <a href="#consts.furniture">consts.furniture</a>
+ &#8226;   <a href="#consts.light">consts.light</a>
  &#8226;   <a href="#consts.params">consts.params</a>
 
   </div>
@@ -3016,11 +3019,31 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="consts.category_conditional_params"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/consts/category_conditional_params.py" type="text/plain"><tt>consts.category_conditional_params</tt></a>
+  <a name="consts.category_param_ids"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/consts/category_param_ids.py" type="text/plain"><tt>consts.category_param_ids</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#consts">consts</a>
+ &#8226;   <a href="#consts.furniture.category_param_ids">consts.furniture.category_param_ids</a>
+ &#8226;   <a href="#consts.light.category_param_ids">consts.light.category_param_ids</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#models.CategoryParamsHandler.CategoryParamsHandler">models.CategoryParamsHandler.CategoryParamsHandler</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="consts.common_category_conditions"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/consts/common_category_conditions.py" type="text/plain"><tt>consts.common_category_conditions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#consts">consts</a>
+ &#8226;   <a href="#consts.furniture.category_conditional_params">consts.furniture.category_conditional_params</a>
+ &#8226;   <a href="#consts.light.category_conditional_params">consts.light.category_conditional_params</a>
 
   </div>
   <div class="import">
@@ -3032,17 +3055,139 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="consts.category_params"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/consts/category_params.py" type="text/plain"><tt>consts.category_params</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
+  <a name="consts.furniture"></a>
+  <a target="code" href="-" type="text/plain"><tt>consts.furniture</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
 imports:
     <a href="#consts">consts</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.furniture.category_conditional_params">consts.furniture.category_conditional_params</a>
+ &#8226;   <a href="#consts.furniture.category_param_ids">consts.furniture.category_param_ids</a>
+ &#8226;   <a href="#consts.furniture.params">consts.furniture.params</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="consts.furniture.category_conditional_params"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/consts/furniture/category_conditional_params.py" type="text/plain"><tt>consts.furniture.category_conditional_params</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#consts.furniture">consts.furniture</a>
+ &#8226;   <a href="#models.Conditions.RoundShapeCondition">models.Conditions.RoundShapeCondition</a>
+ &#8226;   <a href="#models.Conditions.TableLegsColorCondition">models.Conditions.TableLegsColorCondition</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.common_category_conditions">consts.common_category_conditions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="consts.furniture.category_param_ids"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/consts/furniture/category_param_ids.py" type="text/plain"><tt>consts.furniture.category_param_ids</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#consts.furniture">consts.furniture</a>
  &#8226;   <a href="#consts.params">consts.params</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#models.Param.Param">models.Param.Param</a>
+    <a href="#consts.category_param_ids">consts.category_param_ids</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="consts.furniture.params"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/consts/furniture/params.py" type="text/plain"><tt>consts.furniture.params</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#consts.furniture">consts.furniture</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.params">consts.params</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="consts.light"></a>
+  <a target="code" href="-" type="text/plain"><tt>consts.light</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imports:
+    <a href="#consts">consts</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.light.category_conditional_params">consts.light.category_conditional_params</a>
+ &#8226;   <a href="#consts.light.category_param_ids">consts.light.category_param_ids</a>
+ &#8226;   <a href="#consts.light.params">consts.light.params</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="consts.light.category_conditional_params"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/consts/light/category_conditional_params.py" type="text/plain"><tt>consts.light.category_conditional_params</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#consts.light">consts.light</a>
+ &#8226;   <a href="#models.Conditions.BaseCondition">models.Conditions.BaseCondition</a>
+ &#8226;   <a href="#models.Conditions.ShapeCondition">models.Conditions.ShapeCondition</a>
+ &#8226;   <a href="#models.Conditions.SizeCondition">models.Conditions.SizeCondition</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.common_category_conditions">consts.common_category_conditions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="consts.light.category_param_ids"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/consts/light/category_param_ids.py" type="text/plain"><tt>consts.light.category_param_ids</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#consts.light">consts.light</a>
+ &#8226;   <a href="#consts.params">consts.params</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.category_param_ids">consts.category_param_ids</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="consts.light.params"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/consts/light/params.py" type="text/plain"><tt>consts.light.params</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#consts.light">consts.light</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.params">consts.params</a>
 
   </div>
 
@@ -3050,18 +3195,20 @@ imported by:
 
 <div class="node">
   <a name="consts.params"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/consts/params.py" type="text/plain"><tt>consts.params</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/consts/params.py" type="text/plain"><tt>consts.params</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#consts">consts</a>
+ &#8226;   <a href="#consts.furniture.params">consts.furniture.params</a>
+ &#8226;   <a href="#consts.light.params">consts.light.params</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#consts.category_params">consts.category_params</a>
- &#8226;   <a href="#models.Condition.Condition">models.Condition.Condition</a>
+    <a href="#consts.furniture.category_param_ids">consts.furniture.category_param_ids</a>
+ &#8226;   <a href="#consts.light.category_param_ids">consts.light.category_param_ids</a>
+ &#8226;   <a href="#models.Conditions.Condition">models.Conditions.Condition</a>
  &#8226;   <a href="#models.RequiredParam.RequiredParam">models.RequiredParam.RequiredParam</a>
- &#8226;   <a href="#models.Statistics.Statistics">models.Statistics.Statistics</a>
 
   </div>
 
@@ -7927,7 +8074,7 @@ imported by:
 
 <div class="node">
   <a name="local_types"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/local_types.py" type="text/plain"><tt>local_types</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/local_types.py" type="text/plain"><tt>local_types</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#dataclasses">dataclasses</a>
@@ -7937,8 +8084,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#models.Param.Param">models.Param.Param</a>
- &#8226;   <a href="#models.ResultWorkbook.ResultWorkbook">models.ResultWorkbook.ResultWorkbook</a>
+    <a href="#models.ResultWorkbook.ResultWorkbook">models.ResultWorkbook.ResultWorkbook</a>
 
   </div>
 
@@ -8121,12 +8267,13 @@ imported by:
   <a target="code" href="-" type="text/plain"><tt>models</tt></a>
 <span class="moduletype">NamespacePackage</span>  <div class="import">
 imported by:
-    <a href="#models.Condition">models.Condition</a>
+    <a href="#models.CategoryParamsHandler">models.CategoryParamsHandler</a>
  &#8226;   <a href="#models.ConditionalParamChecker">models.ConditionalParamChecker</a>
+ &#8226;   <a href="#models.Conditions">models.Conditions</a>
  &#8226;   <a href="#models.ExportWorkbook">models.ExportWorkbook</a>
  &#8226;   <a href="#models.Fill">models.Fill</a>
- &#8226;   <a href="#models.Param">models.Param</a>
  &#8226;   <a href="#models.Product">models.Product</a>
+ &#8226;   <a href="#models.ProgressBar">models.ProgressBar</a>
  &#8226;   <a href="#models.RequiredParam">models.RequiredParam</a>
  &#8226;   <a href="#models.ResultWorkbook">models.ResultWorkbook</a>
  &#8226;   <a href="#models.Statistics">models.Statistics</a>
@@ -8136,8 +8283,8 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="models.Condition"></a>
-  <a target="code" href="-" type="text/plain"><tt>models.Condition</tt></a>
+  <a name="models.CategoryParamsHandler"></a>
+  <a target="code" href="-" type="text/plain"><tt>models.CategoryParamsHandler</tt></a>
 <span class="moduletype">NamespacePackage</span>  <div class="import">
 imports:
     <a href="#models">models</a>
@@ -8145,24 +8292,27 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#models.Condition.Condition">models.Condition.Condition</a>
+    <a href="#models.CategoryParamsHandler.CategoryParamsHandler">models.CategoryParamsHandler.CategoryParamsHandler</a>
 
   </div>
 
 </div>
 
 <div class="node">
-  <a name="models.Condition.Condition"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/models/Condition/Condition.py" type="text/plain"><tt>models.Condition.Condition</tt></a>
+  <a name="models.CategoryParamsHandler.CategoryParamsHandler"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/CategoryParamsHandler/CategoryParamsHandler.py" type="text/plain"><tt>models.CategoryParamsHandler.CategoryParamsHandler</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#consts.params">consts.params</a>
- &#8226;   <a href="#models.Condition">models.Condition</a>
+    <a href="#consts.category_param_ids">consts.category_param_ids</a>
+ &#8226;   <a href="#models.CategoryParamsHandler">models.CategoryParamsHandler</a>
+ &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+ &#8226;   <a href="#models.RequiredParam.RequiredParam">models.RequiredParam.RequiredParam</a>
+ &#8226;   <a href="#openpyxl.worksheet.worksheet">openpyxl.worksheet.worksheet</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#models.ConditionalParamChecker.ConditionalParamChecker">models.ConditionalParamChecker.ConditionalParamChecker</a>
+    <a href="#main.py">main.py</a>
 
   </div>
 
@@ -8186,11 +8336,10 @@ imported by:
 
 <div class="node">
   <a name="models.ConditionalParamChecker.ConditionalParamChecker"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/models/ConditionalParamChecker/ConditionalParamChecker.py" type="text/plain"><tt>models.ConditionalParamChecker.ConditionalParamChecker</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/ConditionalParamChecker/ConditionalParamChecker.py" type="text/plain"><tt>models.ConditionalParamChecker.ConditionalParamChecker</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#consts.category_conditional_params">consts.category_conditional_params</a>
- &#8226;   <a href="#models.Condition.Condition">models.Condition.Condition</a>
+    <a href="#consts.common_category_conditions">consts.common_category_conditions</a>
  &#8226;   <a href="#models.ConditionalParamChecker">models.ConditionalParamChecker</a>
  &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
 
@@ -8198,6 +8347,140 @@ imports:
   <div class="import">
 imported by:
     <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="models.Conditions"></a>
+  <a target="code" href="-" type="text/plain"><tt>models.Conditions</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imports:
+    <a href="#models">models</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#models.Conditions.BaseCondition">models.Conditions.BaseCondition</a>
+ &#8226;   <a href="#models.Conditions.Condition">models.Conditions.Condition</a>
+ &#8226;   <a href="#models.Conditions.RoundShapeCondition">models.Conditions.RoundShapeCondition</a>
+ &#8226;   <a href="#models.Conditions.ShapeCondition">models.Conditions.ShapeCondition</a>
+ &#8226;   <a href="#models.Conditions.SizeCondition">models.Conditions.SizeCondition</a>
+ &#8226;   <a href="#models.Conditions.TableLegsColorCondition">models.Conditions.TableLegsColorCondition</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="models.Conditions.BaseCondition"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/Conditions/BaseCondition.py" type="text/plain"><tt>models.Conditions.BaseCondition</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#models.Conditions">models.Conditions</a>
+ &#8226;   <a href="#models.Conditions.Condition">models.Conditions.Condition</a>
+ &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.light.category_conditional_params">consts.light.category_conditional_params</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="models.Conditions.Condition"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/Conditions/Condition.py" type="text/plain"><tt>models.Conditions.Condition</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#consts.params">consts.params</a>
+ &#8226;   <a href="#models.Conditions">models.Conditions</a>
+ &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+ &#8226;   <a href="#models.RequiredParam.RequiredParam">models.RequiredParam.RequiredParam</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#models.Conditions.BaseCondition">models.Conditions.BaseCondition</a>
+ &#8226;   <a href="#models.Conditions.RoundShapeCondition">models.Conditions.RoundShapeCondition</a>
+ &#8226;   <a href="#models.Conditions.ShapeCondition">models.Conditions.ShapeCondition</a>
+ &#8226;   <a href="#models.Conditions.SizeCondition">models.Conditions.SizeCondition</a>
+ &#8226;   <a href="#models.Conditions.TableLegsColorCondition">models.Conditions.TableLegsColorCondition</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="models.Conditions.RoundShapeCondition"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/Conditions/RoundShapeCondition.py" type="text/plain"><tt>models.Conditions.RoundShapeCondition</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#models.Conditions">models.Conditions</a>
+ &#8226;   <a href="#models.Conditions.Condition">models.Conditions.Condition</a>
+ &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.furniture.category_conditional_params">consts.furniture.category_conditional_params</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="models.Conditions.ShapeCondition"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/Conditions/ShapeCondition.py" type="text/plain"><tt>models.Conditions.ShapeCondition</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#models.Conditions">models.Conditions</a>
+ &#8226;   <a href="#models.Conditions.Condition">models.Conditions.Condition</a>
+ &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.light.category_conditional_params">consts.light.category_conditional_params</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="models.Conditions.SizeCondition"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/Conditions/SizeCondition.py" type="text/plain"><tt>models.Conditions.SizeCondition</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#models.Conditions">models.Conditions</a>
+ &#8226;   <a href="#models.Conditions.Condition">models.Conditions.Condition</a>
+ &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.light.category_conditional_params">consts.light.category_conditional_params</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="models.Conditions.TableLegsColorCondition"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/Conditions/TableLegsColorCondition.py" type="text/plain"><tt>models.Conditions.TableLegsColorCondition</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#models.Conditions">models.Conditions</a>
+ &#8226;   <a href="#models.Conditions.Condition">models.Conditions.Condition</a>
+ &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#consts.furniture.category_conditional_params">consts.furniture.category_conditional_params</a>
 
   </div>
 
@@ -8221,7 +8504,7 @@ imported by:
 
 <div class="node">
   <a name="models.ExportWorkbook.ExportWorkbook"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/models/ExportWorkbook/ExportWorkbook.py" type="text/plain"><tt>models.ExportWorkbook.ExportWorkbook</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/ExportWorkbook/ExportWorkbook.py" type="text/plain"><tt>models.ExportWorkbook.ExportWorkbook</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#models.ExportWorkbook">models.ExportWorkbook</a>
@@ -8258,7 +8541,7 @@ imported by:
 
 <div class="node">
   <a name="models.Fill.Fill"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/models/Fill/Fill.py" type="text/plain"><tt>models.Fill.Fill</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/Fill/Fill.py" type="text/plain"><tt>models.Fill.Fill</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#models.Fill">models.Fill</a>
@@ -8266,42 +8549,6 @@ imports:
  &#8226;   <a href="#openpyxl.cell.cell">openpyxl.cell.cell</a>
  &#8226;   <a href="#openpyxl.styles">openpyxl.styles</a>
  &#8226;   <a href="#typing">typing</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#main.py">main.py</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="models.Param"></a>
-  <a target="code" href="-" type="text/plain"><tt>models.Param</tt></a>
-<span class="moduletype">NamespacePackage</span>  <div class="import">
-imports:
-    <a href="#models">models</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#models.Param.Param">models.Param.Param</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="models.Param.Param"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/models/Param/Param.py" type="text/plain"><tt>models.Param.Param</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#consts.category_params">consts.category_params</a>
- &#8226;   <a href="#local_types">local_types</a>
- &#8226;   <a href="#models.Param">models.Param</a>
- &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
- &#8226;   <a href="#models.RequiredParam.RequiredParam">models.RequiredParam.RequiredParam</a>
 
   </div>
   <div class="import">
@@ -8330,7 +8577,7 @@ imported by:
 
 <div class="node">
   <a name="models.Product.Product"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/models/Product/Product.py" type="text/plain"><tt>models.Product.Product</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/Product/Product.py" type="text/plain"><tt>models.Product.Product</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#models.Product">models.Product</a>
@@ -8342,10 +8589,49 @@ imports:
   <div class="import">
 imported by:
     <a href="#main.py">main.py</a>
+ &#8226;   <a href="#models.CategoryParamsHandler.CategoryParamsHandler">models.CategoryParamsHandler.CategoryParamsHandler</a>
  &#8226;   <a href="#models.ConditionalParamChecker.ConditionalParamChecker">models.ConditionalParamChecker.ConditionalParamChecker</a>
+ &#8226;   <a href="#models.Conditions.BaseCondition">models.Conditions.BaseCondition</a>
+ &#8226;   <a href="#models.Conditions.Condition">models.Conditions.Condition</a>
+ &#8226;   <a href="#models.Conditions.RoundShapeCondition">models.Conditions.RoundShapeCondition</a>
+ &#8226;   <a href="#models.Conditions.ShapeCondition">models.Conditions.ShapeCondition</a>
+ &#8226;   <a href="#models.Conditions.SizeCondition">models.Conditions.SizeCondition</a>
+ &#8226;   <a href="#models.Conditions.TableLegsColorCondition">models.Conditions.TableLegsColorCondition</a>
  &#8226;   <a href="#models.Fill.Fill">models.Fill.Fill</a>
- &#8226;   <a href="#models.Param.Param">models.Param.Param</a>
  &#8226;   <a href="#models.Statistics.Statistics">models.Statistics.Statistics</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="models.ProgressBar"></a>
+  <a target="code" href="-" type="text/plain"><tt>models.ProgressBar</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imports:
+    <a href="#models">models</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#models.ProgressBar.ProgressBar">models.ProgressBar.ProgressBar</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="models.ProgressBar.ProgressBar"></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/ProgressBar/ProgressBar.py" type="text/plain"><tt>models.ProgressBar.ProgressBar</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#models.ProgressBar">models.ProgressBar</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
 
   </div>
 
@@ -8369,16 +8655,18 @@ imported by:
 
 <div class="node">
   <a name="models.RequiredParam.RequiredParam"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/models/RequiredParam/RequiredParam.py" type="text/plain"><tt>models.RequiredParam.RequiredParam</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/RequiredParam/RequiredParam.py" type="text/plain"><tt>models.RequiredParam.RequiredParam</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#consts.params">consts.params</a>
  &#8226;   <a href="#models.RequiredParam">models.RequiredParam</a>
+ &#8226;   <a href="#openpyxl.cell.cell">openpyxl.cell.cell</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#models.Param.Param">models.Param.Param</a>
+    <a href="#models.CategoryParamsHandler.CategoryParamsHandler">models.CategoryParamsHandler.CategoryParamsHandler</a>
+ &#8226;   <a href="#models.Conditions.Condition">models.Conditions.Condition</a>
  &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
 
   </div>
@@ -8403,7 +8691,7 @@ imported by:
 
 <div class="node">
   <a name="models.ResultWorkbook.ResultWorkbook"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/models/ResultWorkbook/ResultWorkbook.py" type="text/plain"><tt>models.ResultWorkbook.ResultWorkbook</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/ResultWorkbook/ResultWorkbook.py" type="text/plain"><tt>models.ResultWorkbook.ResultWorkbook</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#datetime">datetime</a>
@@ -8441,11 +8729,10 @@ imported by:
 
 <div class="node">
   <a name="models.Statistics.Statistics"></a>
-  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker_new/models/Statistics/Statistics.py" type="text/plain"><tt>models.Statistics.Statistics</tt></a>
+  <a target="code" href="///C:/Users/user10/Desktop/Stuff/Scripts/parameters_checker/code/models/Statistics/Statistics.py" type="text/plain"><tt>models.Statistics.Statistics</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#consts.params">consts.params</a>
- &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+    <a href="#models.Product.Product">models.Product.Product</a>
  &#8226;   <a href="#models.Statistics">models.Statistics</a>
 
   </div>
@@ -14443,6 +14730,7 @@ imported by:
     <a href="#local_types">local_types</a>
  &#8226;   <a href="#models.Fill.Fill">models.Fill.Fill</a>
  &#8226;   <a href="#models.Product.Product">models.Product.Product</a>
+ &#8226;   <a href="#models.RequiredParam.RequiredParam">models.RequiredParam.RequiredParam</a>
  &#8226;   <a href="#openpyxl.cell">openpyxl.cell</a>
  &#8226;   <a href="#openpyxl.worksheet.merge">openpyxl.worksheet.merge</a>
 
@@ -18827,7 +19115,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#models.ExportWorkbook.ExportWorkbook">models.ExportWorkbook.ExportWorkbook</a>
+    <a href="#models.CategoryParamsHandler.CategoryParamsHandler">models.CategoryParamsHandler.CategoryParamsHandler</a>
+ &#8226;   <a href="#models.ExportWorkbook.ExportWorkbook">models.ExportWorkbook.ExportWorkbook</a>
  &#8226;   <a href="#openpyxl.chart.reference">openpyxl.chart.reference</a>
  &#8226;   <a href="#openpyxl.workbook.workbook">openpyxl.workbook.workbook</a>
  &#8226;   <a href="#openpyxl.worksheet._read_only">openpyxl.worksheet._read_only</a>
@@ -20525,6 +20814,7 @@ imported by:
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
  &#8226;   <a href="#models.ExportWorkbook.ExportWorkbook">models.ExportWorkbook.ExportWorkbook</a>
+ &#8226;   <a href="#models.ProgressBar.ProgressBar">models.ProgressBar.ProgressBar</a>
  &#8226;   <a href="#models.ResultWorkbook.ResultWorkbook">models.ResultWorkbook.ResultWorkbook</a>
  &#8226;   <a href="#multiprocessing">multiprocessing</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
