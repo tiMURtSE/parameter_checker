@@ -8,7 +8,7 @@ class Statistics:
 
     def update_statistics(self, product: Product):
         self.total_products += 1
-        self.incomplete_products = self.incomplete_products + 1 if self._is_incomplete_product(product=product) else self.incomplete_products
+        self.incomplete_products = self.incomplete_products + 1 if product._is_incomplete() else self.incomplete_products
         self._set_unfilled_required_params(product=product)
 
     def get_result(self):
@@ -19,14 +19,6 @@ class Statistics:
         }
 
         return result
-    
-    # Этот метод должен быть в объекте Product
-    def _is_incomplete_product(self, product: Product):
-        for param in product.required_params:
-            if param.is_required_parameter_unfilled():
-                return True
-            
-        return False
 
     def _set_unfilled_required_params(self, product: Product):
         for param in product.required_params:

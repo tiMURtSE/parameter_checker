@@ -27,7 +27,7 @@ class ResultWorkbook:
         self._sheet = self._workbook.active
 
     def _input_result_directory_path(self):
-        print("Выберите папку для вывода результатов: ")
+        print("\nВыберите папку для вывода результатов: ")
         self._remove_extra_window()
 
         directory_path = filedialog.askdirectory()
@@ -54,7 +54,7 @@ class ResultWorkbook:
 
     def _create_filename(self):
         current_datetime = self._get_current_datetime()
-        filename = f"{self._directory_path}/Result_{current_datetime}.xlsx"
+        filename = f"{self._directory_path}/Статистика_по_незаполненным_параметрам_{current_datetime}.xlsx"
 
         return filename
 

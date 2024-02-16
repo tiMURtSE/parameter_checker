@@ -1,55 +1,38 @@
 from models.ExportWorkbook.ExportWorkbook import ExportWorkbook
 from models.Product.Product import Product
-from models.Param.Param import Param
+from models.CategoryParamsHandler.CategoryParamsHandler import CategoryParamsHandler
 from models.ConditionalParamChecker.ConditionalParamChecker import ConditionalParamChecker
 from models.Fill.Fill import Fill
 from models.Statistics.Statistics import Statistics
 from models.ResultWorkbook.ResultWorkbook import ResultWorkbook
+from models.ProgressBar.ProgressBar import ProgressBar
 
 class Main:
     PRODUCTS_TABLE_START_POS = 3
 
     def __init__(self):
         self._export_workbook = ExportWorkbook()
-        self._param = Param()
+        self._category_params_handler = CategoryParamsHandler()
         self._conditional_param_checker = ConditionalParamChecker()
         self._fill = Fill()
         self._statistics = Statistics()
         self._result_workbook = ResultWorkbook()
-
-        self._sheet = None
+        self._progress_bar = ProgressBar()
 
     def run(self):
-        self._sheet = self._export_workbook.get_data()
-        self._param.sheet = self._sheet
+        sheet = self._export_workbook.get_data()
+        self._category_params_handler.sheet = sheet
 
-        for index, row in enumerate(self._sheet.iter_rows(min_row=self.PRODUCTS_TABLE_START_POS)):
-            # Создает объект "Товар"
+        for index, row in enumerate(sheet.iter_rows(min_row=self.PRODUCTS_TABLE_START_POS)):
             product = Product(row=row)
-
-            # Возвращает параметры для заполнения, основываясь на категории товара
-            product = self._param.get_category_params(product=product)
-            
-            # Получает значения параметров
-            product.set_param_values()
-            # print([param.__dict__ for param in product.required_params])
-            # sys.exit()
-
-            # Определяет какие параметры являются необязательными для заполнения и какие параметрмы являются условными
+            product = self._category_params_handler.get_category_params(product=product)
             product = self._conditional_param_checker.check_conditions(product=product)
-            
-            # Заливка ячеек
+
             self._fill.fill_cells(product=product)
-
-            # Добавление данных товара в объект со статистикой
             self._statistics.update_statistics(product=product)
+            self._progress_bar.show_progress_bar(number_of_completed_rows=index + 1, total_rows=sheet.max_row - 2)
 
-            # Лог
-            print(f"Номер строки: {index + 1}")
-            print([param.__dict__ for param in product.required_params])
-
-        print(self._statistics.get_result())
-        # self._result_workbook.write_result(self._statistics.get_result())
+        self._result_workbook.write_result(self._statistics.get_result())
         self._export_workbook.save_workbook()
 
 if __name__ == "__main__":

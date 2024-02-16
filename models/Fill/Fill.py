@@ -21,11 +21,19 @@ class Fill:
                     self._fill_cell_red(param.cell)
 
     def _fill_cell_red(self, cell: Cell):
-        red_fill = PatternFill(start_color=self.RED_COLOR, end_color=self.RED_COLOR, fill_type="solid")
+        red_fill = PatternFill(
+            start_color=self.RED_COLOR,
+            end_color=self.RED_COLOR,
+            fill_type="solid"
+        )
 
         cell.fill = red_fill
 
     def _fill_cell_orange(self, cell: Cell):
-        orange_fill = PatternFill(start_color=self.ORANGE_COLOR, end_color=self.ORANGE_COLOR, fill_type="solid")
+        orange_fill = PatternFill(
+            start_color=self.ORANGE_COLOR,
+            end_color=self.ORANGE_COLOR,
+            fill_type="solid"
+        )
 
         cell.fill = orange_fill

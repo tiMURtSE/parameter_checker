@@ -15,7 +15,7 @@ class TableLegsColorCondition(Condition):
             conditional_param_names=conditional_param_names, product=product
         )
 
-        if base_type.value != "на ножках":
+        if base_type.value and base_type.value != "на ножках":
             table_legs_color.is_required = False
 
         self._set_conditional_is_true(conditional_params=[table_legs_color])
